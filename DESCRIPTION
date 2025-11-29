@@ -1,12 +1,19 @@
 Package: plantcsheet
-Title: An Amazing Shiny App
-Version: 0.0.0.9000
-Authors@R: 
-    person(given = "firstname",
-           family = "lastname",
-           role = c("aut", "cre"),
-           email = "your@email.com")
-Description: What the package does (one paragraph).
+Title: TISSUE CULTURE DATA SHEET GENERATOR
+Version: 0.0.1
+Authors@R: c(
+    person("Israel", "Tawiah Tetteh", , "israeltetteh715@gmail.com", role = c("aut", "cre")),
+    person("Alexander", "Bandoh", , "bandohalex1@gmail.com", role = "ctb"),
+    person("Omari", "Owusu", , "omariowusu68@gmail.com", role = "ctb"),
+    person("Ephraim", "Ampofo", , "ephraimampofo22@gmail.com", role = "ctb")
+  )
+Description: Provides a Shiny-based interface for plant tissue culture
+  laboratories to design standardized experimental datasheets,
+  export them as Excel workbooks, and automatically populate them with treatment,
+  replication, and time-point structures.
+  The package streamlines data capture by enforcing consistent variable naming, metadata fields,
+  and layout templates tailored to tissue culture workflows,
+  reducing manual spreadsheet setup and improving downstream analysis in R.
 License: What license is it under?
 Imports: 
     config,
@@ -14,4 +21,4 @@ Imports:
     shiny
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 7.1.1
+RoxygenNote: 7.3.3

@@ -20,16 +20,42 @@
 ##
 golem::fill_desc(
   pkg_name = "plantcsheet", # The name of the golem package containing the app (typically lowercase, no underscore or periods)
-  pkg_title = "PKG_TITLE", # What the Package Does (One Line, Title Case, No Period)
-  pkg_description = "PKG_DESC.", # What the package does (one paragraph).
-  authors = person(
-    given = "AUTHOR_FIRST", # Your First Name
-    family = "AUTHOR_LAST", # Your Last Name
-    email = "AUTHOR@MAIL.COM", # Your email
-    role = c("aut", "cre") # Your role (here author/creator)
+  pkg_title = "TISSUE CULTURE DATA SHEET GENERATOR", # What the Package Does (One Line, Title Case, No Period)
+  pkg_description = "Provides a Shiny-based interface for plant tissue culture
+  laboratories to design standardized experimental datasheets,
+  export them as Excel workbooks, and automatically populate them with treatment,
+  replication, and time-point structures.
+  The package streamlines data capture by enforcing consistent variable naming, metadata fields,
+  and layout templates tailored to tissue culture workflows,
+  reducing manual spreadsheet setup and improving downstream analysis in R.", # What the package does (one paragraph).
+  authors = c(
+    person(
+      given = "Israel", # Your First Name
+      family = "Tawiah Tetteh", # Your Last Name
+      email = "israeltetteh715@gmail.com", # Your email
+      role = c("aut", "cre") # Your role (here author/creator)
+    ),
+    person(
+      given = "Alexander", # Your First Name
+      family = "Bandoh", # Your Last Name
+      email = "bandohalex1@gmail.com", # Your email
+      role = "ctb" # Your role (here author/creator)
+    ),
+    person(
+      given = "Omari", # Your First Name
+      family = "Owusu", # Your Last Name
+      email = "omariowusu68@gmail.com", # Your email
+      role = "ctb" # Your role (here author/creator)
+    ),
+    person(
+      given = "Ephraim", # Your First Name
+      family = "Ampofo", # Your Last Name
+      email = "ephraimampofo22@gmail.com", # Your email
+      role = "ctb" # Your role (here author/creator)
+    )
   ),
   repo_url = NULL, # The URL of the GitHub repo (optional),
-  pkg_version = "0.0.0.9000", # The version of the package containing the app
+  pkg_version = "0.0.1", # The version of the package containing the app
   set_options = TRUE # Set the global golem options
 )
 
