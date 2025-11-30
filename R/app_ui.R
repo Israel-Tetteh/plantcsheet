@@ -9,9 +9,25 @@ app_ui <- function(request) {
     # Leave this function for adding external resources
     golem_add_external_resources(),
     # Your application UI logic
-    fluidPage(
-     # golem::golem_welcome_page() # Remove this line to start building your UI
-    )
+     navbarPage(title = 'plantcsheet App' ,
+                id = 'nav_id',
+                theme = bslib::bs_theme(bootswatch = 'flatly',version = 5),
+
+                # Home panel
+                bslib::nav_panel(title = 'Home',icon = bsicons::bs_icon(name = 'house')),
+
+                bslib::nav_item(), # space home from other
+
+                # Navbarpanels
+               bslib::nav_menu( title = 'Generate Datasheets',icon = bsicons::bs_icon(name = 'table'),
+                         # Single treatment datasheet
+                         bslib::nav_panel(title = 'Single Treatment Datasheets'),
+
+                         # Multi factor tab
+                         bslib::nav_panel(title = 'Multi Factorial Treatment Datasheets'))
+
+                )
+
   )
 }
 
