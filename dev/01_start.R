@@ -73,6 +73,14 @@ usethis::use_code_of_conduct(contact = "Golem User")
 usethis::use_lifecycle_badge("Experimental")
 usethis::use_news_md(open = FALSE)
 
+
+# Packages used.
+usethis::use_package("bslib")
+usethis::use_package(package = 'shinyalert')
+usethis::use_package(package = 'openxlsx')
+usethis
+
+
 ## Init Testing Infrastructure ----
 ## Create a template for tests
 golem::use_recommended_tests()

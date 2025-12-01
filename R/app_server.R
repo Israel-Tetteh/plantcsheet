@@ -5,5 +5,6 @@
 #' @import shiny
 #' @noRd
 app_server <- function(input, output, session) {
-  # Your application server logic
+  # Module for single sheet.
+  mod_generate_single_sheet_server("generate_single_sheet_1")
 }

@@ -9,25 +9,44 @@ app_ui <- function(request) {
     # Leave this function for adding external resources
     golem_add_external_resources(),
     # Your application UI logic
-     navbarPage(title = 'plantcsheet App' ,
-                id = 'nav_id',
-                theme = bslib::bs_theme(bootswatch = 'flatly',version = 5),
+    navbarPage(
+      title = "plantcsheet App",
+      id = "nav_id",
+      theme = bslib::bs_theme(
+        version = 5,
+        bootswatch = "flatly",
+        primary = "#145214",
+        success = "#27AE60",
+        info = "#3498DB",
+        warning = "#F39C12",
+        danger = "#E74C3C"
+      ),
 
-                # Home panel
-                bslib::nav_panel(title = 'Home',icon = bsicons::bs_icon(name = 'house')),
+      # Home panel
+      bslib::nav_panel(
+        title = "Home",
+        icon  = bsicons::bs_icon("house"),
+        bslib::card(
+          bslib::card_body(
+            h3("Home page under development"),
+            p("This section is not available yet. Please use the Single Treatment Datasheet tab for now.")
+          )
+        )
+      ),
 
-                bslib::nav_item(), # space home from other
+      bslib::nav_item(), # space home from other
 
-                # Navbarpanels
-               bslib::nav_menu( title = 'Generate Datasheets',icon = bsicons::bs_icon(name = 'table'),
-                         # Single treatment datasheet
-                         bslib::nav_panel(title = 'Single Treatment Datasheets'),
+      # Navbarpanels
+      bslib::nav_panel(
+        title = "Single Treatment Datasheets",
+        # module for single factor sheet generation
+        mod_generate_single_sheet_ui("generate_single_sheet_1")
+      ),
+      bslib::nav_item(), # space home from other
 
-                         # Multi factor tab
-                         bslib::nav_panel(title = 'Multi Factorial Treatment Datasheets'))
-
-                )
-
+      # Multi factor tab
+      bslib::nav_panel(title = "Multi Factorial Treatment Datasheets")
+    )
   )
 }
 
@@ -46,7 +65,7 @@ golem_add_external_resources <- function() {
   )
 
   tags$head(
-    favicon(ext = 'png'),
+    favicon(ext = "png"),
     bundle_resources(
       path = app_sys("app/www"),
       app_title = "plantcsheet"
@@ -55,6 +74,3 @@ golem_add_external_resources <- function() {
     # for example, you can add shinyalert::useShinyalert()
   )
 }
-
-
-
