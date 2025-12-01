@@ -5,11 +5,22 @@
 \title{Generate a datasheet for single factor treatment experiments}
 \usage{
 generate_single_sheet(
-  observation_frequency,
-  num_records,
-  treatments,
-  replicates_per_treatment,
-  parameters
+  observation_frequency = NULL,
+  num_records = NULL,
+  time_unit = c("Weeks", "Days"),
+  treatments = NULL,
+  replicates_per_treatment = NULL,
+  parameters,
+  research_title = NULL,
+  researcher_mail = NULL,
+  researcher_name = NULL,
+  date_started = NULL,
+  plant_species = NULL,
+  explant_type = NULL,
+  culture_condition = NULL,
+  treatment_desc = NULL,
+  replicate_per_treatment = NULL,
+  observation_interval = NULL
 )
 }
 \arguments{
@@ -30,13 +41,25 @@ A dataframe structured for single factor treatment experiments, including unique
 Generate a datasheet for single factor treatment experiments
 }
 \examples{
-generate_single_sheet(
-  observation_frequency = 2,
-  num_records = 5,
-  treatments = c("0mg/L", "2.5mg/L", "5mg/L", "10mg/L"),
-  replicates_per_treatment = 7,
-  parameters = c('Number of leaves', 'Number of shoot','Number of roots')
 
+generate_single_sheet(
+  observation_frequency = 1,
+  num_records = 4,
+  time_unit = "Days",
+  treatments = c("0mg/L", "2.5mg/L", "5mg/L"),
+  replicates_per_treatment = 3,
+  parameters = "Number of leaves",
+  # Metadata inputs
+  research_title = "Effect of Cytokinin Concentration on Yam Node Culture",
+  researcher_mail = "israel.example.com",
+  researcher_name = "Israel Tetteh",
+  date_started = "2025-01-15",
+  plant_species = "Dioscorea  rotundata",
+  explant_type = "Node",
+  culture_condition = "25°C, 16h light / 8h dark",
+  treatment_desc = "Cytokinin at 0, 2.5, and 5 mg/L",
+  replicate_per_treatment = 3,
+  observation_interval = "Weekly"
 )
 
 }
