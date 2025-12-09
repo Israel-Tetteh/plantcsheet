@@ -22,19 +22,19 @@ app_ui <- function(request) {
         danger = "#E74C3C"
       ),
 
-      # Home panel
-      bslib::nav_panel(
-        title = "Home",
-        icon  = bsicons::bs_icon("house"),
-        bslib::card(
-          bslib::card_body(
-            h3("Home page under development"),
-            p("This section is not available yet. Please use the Single Treatment Datasheet tab for now.")
-          )
-        )
-      ),
-
-      bslib::nav_item(), # space home from other
+      # # Home panel
+      # bslib::nav_panel(
+      #   title = "Home",
+      #   icon  = bsicons::bs_icon("house"),
+      #   bslib::card(
+      #     bslib::card_body(
+      #       h3("Home page under development"),
+      #       p("This section is not available yet. Please use the Single Treatment Datasheet tab for now.")
+      #     )
+      #   )
+      # ),
+      #
+      # bslib::nav_item(), # space home from other
 
       # Navbarpanels
       bslib::nav_panel(
@@ -45,7 +45,14 @@ app_ui <- function(request) {
       bslib::nav_item(), # space home from other
 
       # Multi factor tab
-      bslib::nav_panel(title = "Multi Factorial Treatment Datasheets")
+      bslib::nav_panel(title = "Multi Factorial Treatment Datasheets",
+                       bslib::card(
+                         bslib::card_body(
+                           h3("Multi Factorial Treatment Datasheets"),
+                           p("This section is not available yet. Please use the Single Treatment Datasheet tab for now.")
+                         )
+                       )
+                       )
     )
   )
 }

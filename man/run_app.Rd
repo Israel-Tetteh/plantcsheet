@@ -6,6 +6,7 @@
 \usage{
 run_app(
   onStart = NULL,
+  pkg_install = T,
   options = list(),
   enableBookmarking = NULL,
   uiPattern = "/",

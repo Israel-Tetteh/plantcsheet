@@ -73,14 +73,14 @@ generate_single_sheet <- function(
 
   # Knit into dataframe
   # Check user specified time frame.
-  if (time_unit == "Weeks") {
+  if (time_unit == "Weekly") {
     df <- data.frame(
       UNIQUE_ID = total_expID,
       WEEK = total_weeks,
       TREATMENT_ID = total_rep_treat,
       REPLICATE_NUMBER = total_reps
     )
-  } else if (time_unit == "Days") {
+  } else if (time_unit == "Daily") {
     df <- data.frame(
       UNIQUE_ID = total_expID,
       DAY = total_weeks,

@@ -7,6 +7,8 @@
 #' @noRd
 #'
 #' @importFrom shiny NS tagList
+#' @import bslib
+#'
 mod_generate_single_sheet_ui <- function(id) {
   ns <- NS(id)
   tagList(
@@ -48,8 +50,8 @@ mod_generate_single_sheet_ui <- function(id) {
             selectInput(
               inputId = ns("time_unit"),
               label = "Time unit for observations:",
-              choices = c("Weeks", "Days"),
-              selected = "Weeks"
+              choices = c("Weekly", "Daily"),
+              selected = "Weekly"
             ),
 
             # input for number of records
@@ -65,7 +67,7 @@ mod_generate_single_sheet_ui <- function(id) {
             numericInput(
               inputId = ns("obs_int"),
               label = "Observation interval (chosen time units):",
-              value = 5,
+              value = 2,
               min = 1,
               step = 1
             ),
