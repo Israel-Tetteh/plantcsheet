@@ -1,10 +1,15 @@
 # plantcsheet
 
-**plantcsheet** is a tool for the standardized and automated generation of plant tissue culture datasheets, which can be readily exported to Excel files.  
+<p align="center">
+  <img width="235" height="235" alt="favicon" src="https://github.com/user-attachments/assets/a0dea0e6-e4ac-4edd-bcf5-81abf1cfc36e" />
+</p>
 
-Currently, only the **single datasheet functionality** is available. Other functionalities will be added very soon.  
+**plantcsheet** is a tool for the standardized and automated generation of plant tissue culture datasheets, which can be readily exported to Excel files.
 
-If you encounter any problems, feel free to reach out.  
+Currently, only the **single datasheet functionality** is available. Other functionalities will be added very soon.
+
+If you encounter any problems, feel free to reach out.
+
 
 ## Installation
 
