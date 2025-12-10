@@ -2,12 +2,12 @@
 % Please edit documentation in R/generate_single_sheet.R
 \name{generate_single_sheet}
 \alias{generate_single_sheet}
-\title{Generate a datasheet for single factor treatment experiments}
+\title{Generate a datasheet for single-factor treatment experiments}
 \usage{
 generate_single_sheet(
   observation_frequency = NULL,
   num_records = NULL,
-  time_unit = c("Weeks", "Days"),
+  time_unit = c("Weekly", "Daily"),
   treatments = NULL,
   replicates_per_treatment = NULL,
   parameters,
@@ -24,28 +24,54 @@ generate_single_sheet(
 )
 }
 \arguments{
-\item{observation_frequency}{number of weeks between observations}
+\item{observation_frequency}{Numeric. Interval (in weeks or days) between successive observations.}
 
-\item{num_records}{number of observation records to generate}
+\item{num_records}{Numeric. Total number of observation time points to generate.}
 
-\item{treatments}{vector of treatment names}
+\item{time_unit}{Character. Unit of time for observations; either "Weeks" or "Days".}
 
-\item{replicates_per_treatment}{number of replicates for each treatment}
+\item{treatments}{Character vector. Names or labels of the treatment levels.}
 
-\item{parameters}{vector of dependent variables to measure.}
+\item{replicates_per_treatment}{Numeric. Number of biological or experimental replicates per treatment.}
+
+\item{parameters}{Character vector. Names of the dependent variables or traits to be measured.}
+
+\item{research_title}{Character. Title of the research experiment.}
+
+\item{researcher_mail}{Character. Email address of the researcher.}
+
+\item{researcher_name}{Character. Name of the researcher.}
+
+\item{date_started}{Character or Date. Date the experiment was initiated.}
+
+\item{plant_species}{Character. Scientific name of the plant species used.}
+
+\item{explant_type}{Character. Type of explant used for culture.}
+
+\item{culture_condition}{Character. Description of growth or culture conditions maintained during the experiment.}
+
+\item{treatment_desc}{Character. Full description of the treatment structure.}
+
+\item{replicate_per_treatment}{Numeric. (Metadata) Number of replicates specified for documentation.}
+
+\item{observation_interval}{Character. Human-readable description of how often observations occur (e.g., "Weekly").}
 }
 \value{
-A dataframe structured for single factor treatment experiments, including unique IDs, weeks, treatment IDs, replicate numbers, and parameter columns initialized with NA values
+A list containing:
+\describe{
+  \item{data_collection_sheet}{A dataframe containing the structured observation datasheet for single-factor treatment experiments.}
+  \item{metadata_sheet}{A dataframe containing metadata describing the experiment.}
+}
 }
 \description{
-Generate a datasheet for single factor treatment experiments
+Generate a datasheet for single-factor treatment experiments
 }
 \examples{
 
 generate_single_sheet(
   observation_frequency = 1,
   num_records = 4,
-  time_unit = "Days",
+  time_unit = "Weekly",
   treatments = c("0mg/L", "2.5mg/L", "5mg/L"),
   replicates_per_treatment = 3,
   parameters = "Number of leaves",

@@ -1,12 +1,28 @@
-#' Generate a datasheet for single factor treatment experiments
+#' Generate a datasheet for single-factor treatment experiments
 #'
-#' @param observation_frequency number of weeks between observations
-#' @param num_records number of observation records to generate
-#' @param treatments vector of treatment names
-#' @param replicates_per_treatment number of replicates for each treatment
-#' @param parameters vector of dependent variables to measure.
+#' @param observation_frequency Numeric. Interval (in weeks or days) between successive observations.
+#' @param num_records Numeric. Total number of observation time points to generate.
+#' @param time_unit Character. Unit of time for observations; either "Weeks" or "Days".
+#' @param treatments Character vector. Names or labels of the treatment levels.
+#' @param replicates_per_treatment Numeric. Number of biological or experimental replicates per treatment.
+#' @param parameters Character vector. Names of the dependent variables or traits to be measured.
 #'
-#' @returns A dataframe structured for single factor treatment experiments, including unique IDs, weeks, treatment IDs, replicate numbers, and parameter columns initialized with NA values
+#' @param research_title Character. Title of the research experiment.
+#' @param researcher_mail Character. Email address of the researcher.
+#' @param researcher_name Character. Name of the researcher.
+#' @param date_started Character or Date. Date the experiment was initiated.
+#' @param plant_species Character. Scientific name of the plant species used.
+#' @param explant_type Character. Type of explant used for culture.
+#' @param culture_condition Character. Description of growth or culture conditions maintained during the experiment.
+#' @param treatment_desc Character. Full description of the treatment structure.
+#' @param replicate_per_treatment Numeric. (Metadata) Number of replicates specified for documentation.
+#' @param observation_interval Character. Human-readable description of how often observations occur (e.g., "Weekly").
+#'
+#' @returns A list containing:
+#' \describe{
+#'   \item{data_collection_sheet}{A dataframe containing the structured observation datasheet for single-factor treatment experiments.}
+#'   \item{metadata_sheet}{A dataframe containing metadata describing the experiment.}
+#' }
 #' @export
 #'
 #' @examples
@@ -14,7 +30,7 @@
 #' generate_single_sheet(
 #'   observation_frequency = 1,
 #'   num_records = 4,
-#'   time_unit = "Days",
+#'   time_unit = "Weekly",
 #'   treatments = c("0mg/L", "2.5mg/L", "5mg/L"),
 #'   replicates_per_treatment = 3,
 #'   parameters = "Number of leaves",
@@ -34,7 +50,7 @@
 generate_single_sheet <- function(
   observation_frequency = NULL,
   num_records = NULL,
-  time_unit = c("Weeks", "Days"),
+  time_unit = c("Weekly", "Daily"),
   treatments = NULL,
   replicates_per_treatment = NULL,
   parameters, # vector comma seperated.
@@ -136,5 +152,5 @@ generate_single_sheet <- function(
 
 
   # Return both datasheet and metadataframe.
-  return(list(final_df = final_df, meta_data = meta_dataframe))
+  return(list(Data_Collection_Sheet = final_df, metadata_sheet = meta_dataframe))
 }
