@@ -17,3 +17,31 @@ install.packages("devtools")
 # Install plantcsheet from GitHub
 devtools::install_github("Israel-Tetteh/plantcsheet")
 ```
+To use the customizable function for generating a single-treatment datasheet in R:
+```r
+# Generate a single treatment datasheet.
+plantcsheet::generate_single_sheet(
+  observation_frequency    = 1,
+  num_records              = 4,
+  time_unit                = "Weekly",
+  treatments               = c("0mg/L", "2.5mg/L", "5mg/L"),
+  replicates_per_treatment = 3,
+  parameters               = c("Number of Leaves", 'Plantlet Height'),
+  research_title           = "Effect of Cytokinin Concentration on Yam Node Culture",
+  researcher_mail          = "everythingr25.com",
+  researcher_name          = "EverythingR",
+  date_started             = "2025-01-15",
+  plant_species            = "Dioscorea  rotundata",
+  explant_type             = "Node",
+  culture_condition        = "25°C, 16h light / 8h dark",
+  treatment_desc           = "Cytokinin at 0, 2.5, and 5 mg/L",
+  replicate_per_treatment  = 3,
+  observation_interval     = "Weekly"
+)
+```
+
+
+To launch the Shiny app:
+```r
+plantcsheet::run_app()
+```
