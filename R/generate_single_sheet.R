@@ -152,5 +152,5 @@ generate_single_sheet <- function(
 
 
   # Return both datasheet and metadataframe.
-  return(list(Data_Collection_Sheet = final_df, metadata_sheet = meta_dataframe))
+  return(list(Data_Collection_Sheet = final_df, Metadata_Sheet = meta_dataframe))
 }
