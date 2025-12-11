@@ -78,7 +78,7 @@ usethis::use_news_md(open = FALSE)
 usethis::use_package("bslib")
 usethis::use_package(package = 'shinyalert')
 usethis::use_package(package = 'openxlsx')
-usethis
+usethis::use_package(package = 'DT')
 
 
 ## Init Testing Infrastructure ----

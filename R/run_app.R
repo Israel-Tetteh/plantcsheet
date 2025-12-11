@@ -17,7 +17,7 @@ run_app <- function(
 ) {
   # Check all suggested packages at the start
   suggested_packages <- c(
-    "bslib", "config", "golem", "openxlsx", "shiny", "shinyalert"
+    "bslib", "config", "golem", "openxlsx", "shiny", "shinyalert","DT"
   )
 
   missing_packages <- suggested_packages[!sapply(suggested_packages,

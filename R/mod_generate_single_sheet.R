@@ -8,6 +8,7 @@
 #'
 #' @importFrom shiny NS tagList
 #' @import bslib
+#' @import DT
 #'
 mod_generate_single_sheet_ui <- function(id) {
   ns <- NS(id)

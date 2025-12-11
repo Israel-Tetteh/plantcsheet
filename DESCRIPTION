@@ -18,6 +18,7 @@ License: What license is it under?
 Imports: 
     bslib,
     config,
+    DT,
     golem,
     openxlsx,
     shiny,
